@@ -13,30 +13,30 @@ namespace NslAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MemberController : ControllerBase
+    public class FeesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public MemberController(IUnitOfWork unitOfWork, IMapper mapper)
+        public FeesController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetMembers()
+        public async Task<IActionResult> GetFees()
         {
-            var members = await _unitOfWork.Members.GetAll(null, null, new List<string> { "Fees" });
-            var result = _mapper.Map<List<MemberDTO>>(members);
+            var fees = await _unitOfWork.Fees.GetAll(null, null, new List<string> { "Member" });
+            var result = _mapper.Map<List<FeesDTO>>(fees);
             return Ok(result);
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetMember(int id)
         {
-            var member = await _unitOfWork.Members.Get(m => m.Id == id, new List<string> { "Fees" });
-            var result = _mapper.Map<MemberDTO>(member);
+            var fees = await _unitOfWork.Fees.Get(m => m.Id == id, new List<string> { "Member" });
+            var result = _mapper.Map<FeesDTO>(fees);
             return Ok(result);
         }
     }
