@@ -19,6 +19,7 @@ namespace NslAPI.Services.Configurations
             CreateMap<Player, CreatePlayerDTO>().ReverseMap();
             CreateMap<Fees, FeesDTO>().ReverseMap();
             CreateMap<Fees, CreateFeesDTO>().ReverseMap();
+            CreateMap<ApiUser, UserDTO>().ReverseMap();
         }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NslAPI.Data;
 
 namespace NslAPI.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220224223421_apiuseradded")]
+    partial class apiuseradded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,22 +46,6 @@ namespace NslAPI.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "87dbcf1e-1cc8-49cc-9120-945c41028af5",
-                            ConcurrencyStamp = "7885486a-3f18-46d8-b415-14a9bfbccb25",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "f9e7be73-d116-4f38-b108-0ac5dcb99337",
-                            ConcurrencyStamp = "73a55caa-282d-4bba-b965-b72362b6cdce",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -267,7 +253,7 @@ namespace NslAPI.Data.Migrations
                         {
                             Id = 1,
                             AmountPaid = 200,
-                            DateOfPayment = new DateTime(2022, 2, 25, 10, 6, 38, 334, DateTimeKind.Local).AddTicks(8087),
+                            DateOfPayment = new DateTime(2022, 2, 25, 9, 34, 20, 760, DateTimeKind.Local).AddTicks(1033),
                             FeeType = "Member",
                             MemberId = 1
                         },
@@ -275,7 +261,7 @@ namespace NslAPI.Data.Migrations
                         {
                             Id = 2,
                             AmountPaid = 200,
-                            DateOfPayment = new DateTime(2022, 2, 25, 10, 6, 38, 341, DateTimeKind.Local).AddTicks(3664),
+                            DateOfPayment = new DateTime(2022, 2, 25, 9, 34, 20, 765, DateTimeKind.Local).AddTicks(2524),
                             FeeType = "Member",
                             MemberId = 2
                         },
@@ -283,7 +269,7 @@ namespace NslAPI.Data.Migrations
                         {
                             Id = 3,
                             AmountPaid = 100,
-                            DateOfPayment = new DateTime(2022, 2, 25, 10, 6, 38, 341, DateTimeKind.Local).AddTicks(3726),
+                            DateOfPayment = new DateTime(2022, 2, 25, 9, 34, 20, 765, DateTimeKind.Local).AddTicks(2585),
                             FeeType = "Jersey",
                             MemberId = 2
                         });
