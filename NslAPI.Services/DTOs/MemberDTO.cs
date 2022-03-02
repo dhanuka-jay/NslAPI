@@ -47,6 +47,12 @@ namespace NslAPI.Services.DTOs
         public int IsActive { get; set; }
 
     }
+
+    public class UpdateMemberDTO : CreateMemberDTO
+    {
+
+    }
+
     public class MemberDTO : CreateMemberDTO
     {
         public int Id { get; set; }

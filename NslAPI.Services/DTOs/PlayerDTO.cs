@@ -29,6 +29,11 @@ namespace NslAPI.Services.DTOs
         public int MemberId { get; set; }
     }
 
+    public class UpdatePlayerDTO : CreatePlayerDTO
+    {
+
+    }
+
     public class PlayerDTO : CreatePlayerDTO
     {
         public int Id { get; set; }

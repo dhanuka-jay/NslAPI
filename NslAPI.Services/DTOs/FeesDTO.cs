@@ -21,6 +21,11 @@ namespace NslAPI.Services.DTOs
         public int MemberId { get; set; }
     }
 
+    public class UpdateFeesDTO : CreateFeesDTO
+    {
+
+    }
+
     public class FeesDTO : CreateFeesDTO
     {
         public int Id { get; set; }

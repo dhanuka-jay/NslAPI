@@ -21,6 +21,11 @@ namespace NslAPI.Data.Configurations.Entities
                 },
                 new IdentityRole
                 {
+                    Name = "Moderator",
+                    NormalizedName = "MODERATOR"
+                },
+                new IdentityRole
+                {
                     Name = "Administrator",
                     NormalizedName = "ADMINISTRATOR"
                 }
